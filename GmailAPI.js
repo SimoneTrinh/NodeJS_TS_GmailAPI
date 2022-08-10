@@ -6,6 +6,7 @@ class GmailAPI {
   constructor() {
     this.accessToken = this.getAccessToken();
   }
+  //Public accessToken variables
 
   getAccessToken = async () => {
     var data = qs.stringify({
@@ -35,6 +36,7 @@ class GmailAPI {
       });
     return accessToken;
   };
+  //Get access token each time need to request (must run first)
 
   searchMail = async (searchItem) => {
     var config = {
@@ -54,6 +56,7 @@ class GmailAPI {
         console.log(error);
       });
   };
+  //v0.1 search mail, return all mail related to this query
 
   searchMmail_01 = async (searchItem) => {
     var config = {
@@ -76,6 +79,7 @@ class GmailAPI {
       });
     return threadId;
   };
+  //v0.2 search mail, return the first email ID from the query
 
   readGmailContent = async (messageId) => {
     var config = {
@@ -85,9 +89,7 @@ class GmailAPI {
         Authorization: `Bearer ${await this.accessToken}`,
       },
     };
-
     var data = {};
-
     await axios(config)
       .then(async function (response) {
         data = await response.data;
@@ -95,9 +97,9 @@ class GmailAPI {
       .catch(function (error) {
         console.log(error);
       });
-
     return data;
   };
+  //Read content from exact therad ID
 
   readInboxContent = async (searchText) => {
     const threadId = await this.searchMmail_01(searchText);
@@ -110,6 +112,8 @@ class GmailAPI {
     // console.log(encodedMessage);
     // return encodedMessage;
   };
+  //Parse the message and return the expect body
 }
-
 module.exports = new GmailAPI();
+
+// export module to use in index.js
