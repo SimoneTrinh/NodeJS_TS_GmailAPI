@@ -1,0 +1,15 @@
+{
+  "name": "nodejs_getmail",
+  "version": "1.0.0",
+  "description": "Gmail API",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Long",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "qs": "^6.11.0"
+  }
+}
