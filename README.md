@@ -2,7 +2,8 @@
 # Library used: axios.js, qs.js
 API need 3 params: client_id; client_secret; refresh_token
 Client_id, client_secret get from Google Cloud to generate AccessToken for query
-Refresh_token get from Oath2Auth
+
+Refresh_token get from Oath2Auth Manually by approve request App accees to your Google account
 
 This library have 2 files: auth.ts, GmailAPI.ts in folder 'lib'
 
