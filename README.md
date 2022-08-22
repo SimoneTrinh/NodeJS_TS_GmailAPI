@@ -13,3 +13,5 @@ https://developers.google.com/gmail/api/reference/rest
 
 2. OAuth 2.0 Google
 https://developers.google.com/identity/protocols/oauth2
+
+Use sample index.ts to run this demo
