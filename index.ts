@@ -1,6 +1,7 @@
 import GmailAPI from "./lib/GmailAPI";
 import * as data from "./credentials.json";
 
+//Khởi tạo
 const logMsg = async () => {
   const newAPI = new GmailAPI({
     clientID: data.client_id,
@@ -10,5 +11,5 @@ const logMsg = async () => {
   const msg = await newAPI.readInboxContent("OCG");
   console.log(msg);
 };
-
+//Run
 logMsg();
